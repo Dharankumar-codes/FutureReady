@@ -15,11 +15,11 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     setError('')
-    const result = login(form.email, form.password)
+    const result = login({ email: form.email, password: form.password })
     if (result.success) {
       navigate('/')
     } else {
-      setError(result.message)
+      setError(result.error)
     }
   }
 
